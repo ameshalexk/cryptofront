@@ -4,21 +4,18 @@ import Navbar from "./components/NavBar/NavBar";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LogInForm/LogInForm";
 import LogOut from "./components/LogOut/LogOut";
-import Ticker from "./components/Ticker";
+import Home from "./components/Home/Home";
 
 function App() {
     return (
-    <>
-    <Navbar/>
-    <div className="App">
-        <LogInForm/>
-      <Ticker />
-    </div>
-      
-    </>
-
+        <>
+            <Navbar />
+            <div className="App">
+                <LogInForm />
+                <Home />
+            </div>
+        </>
     );
-    
 }
 
 export default App;
