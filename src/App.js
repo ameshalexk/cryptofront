@@ -5,6 +5,7 @@ import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LogInForm/LogInForm";
 import LogOut from "./components/LogOut/LogOut";
 import Home from "./components/Home/Home";
+import Portfolio from "./components/Portfolio";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
             <div className="App">
                 <LogInForm />
                 <Home />
+                <Portfolio />
             </div>
         </>
     );

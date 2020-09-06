@@ -1,6 +1,6 @@
 import React from "react";
-import Ticker from "./Ticker";
-import Hero from "./Hero";
+import Ticker from "./Ticker/Ticker";
+import Hero from "./Hero/Hero";
 
 const Home = () => {
     return (
