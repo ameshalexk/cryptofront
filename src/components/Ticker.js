@@ -18,7 +18,7 @@ const Ticker = () => {
     }, []);
 
     return (
-        <div className="ticker_wrap">
+        <section className="ticker_wrap">
             {Object.keys(coinData).length > 0 ? (
                 <ul className="ticker_list">
                     {Object.entries(coinData).map((coin, i) => {
@@ -28,12 +28,24 @@ const Ticker = () => {
                                     src="https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579"
                                     alt="coin-logo"
                                 />
-                                <p>
+                                <p className="ticker_item_name">
                                     <strong>{coin[0]}</strong>
                                 </p>
-                                <p>${coin[1].usd}</p>
+                                <p className="ticker_item_price">
+                                    ${coin[1].usd}
+                                </p>
                                 <p className="ticker_item_change">
-                                    ▲ {coin[1].usd_24h_change.toFixed(2)}%
+                                    {coin[1].usd_24h_change.toFixed(2) > 0 ? (
+                                        <span className="text_green">
+                                            ▲{" "}
+                                            {coin[1].usd_24h_change.toFixed(2)}%
+                                        </span>
+                                    ) : (
+                                        <span className="text_red">
+                                            ▾{" "}
+                                            {coin[1].usd_24h_change.toFixed(2)}%
+                                        </span>
+                                    )}
                                 </p>
                             </li>
                         );
@@ -42,7 +54,7 @@ const Ticker = () => {
             ) : (
                 <p>No coin data available</p>
             )}
-        </div>
+        </section>
     );
 };
 
