@@ -33,14 +33,14 @@ function PurchaseShow(props) {
             <td>{shares}</td>
             <td>${shares*price}</td>
             <td>
-            {Object.entries(coinData).map((coin) => {
-                      console.log(coin);
+            {Object.entries(coinData).map((coin,i) => {
+                      // console.log(coin);
                       if (coin[0] === props.purchase.coin) {
                         if(coin[1].usd > props.purchase.price) {
                           
-                          return <span style={{ color: 'green'}}> ${(coin[1].usd - props.purchase.price).toFixed(2)} ({((coin[1].usd - props.purchase.price)/props.purchase.price*100).toFixed(2)}%) </span>
+                          return <span key={i} style={{ color: 'green'}}> ${(coin[1].usd - props.purchase.price).toFixed(2)} ({((coin[1].usd - props.purchase.price)/props.purchase.price*100).toFixed(2)}%) </span>
                         } else if (coin[1].usd < props.purchase.price) {
-                          return <span style={{ color: 'red'}}> ${(coin[1].usd - props.purchase.price).toFixed(2)} ({((coin[1].usd - props.purchase.price)/coin[1].usd*100).toFixed(2)}%)</span>
+                          return <span key={i} style={{ color: 'red'}}> ${(coin[1].usd - props.purchase.price).toFixed(2)} ({((coin[1].usd - props.purchase.price)/coin[1].usd*100).toFixed(2)}%)</span>
                         } else {
                           return coin[1].usd - props.purchase.price
                         }

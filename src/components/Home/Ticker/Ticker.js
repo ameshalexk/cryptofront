@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from "react";
 
 const Ticker = () => {
-
     const coinAPI =
         "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ceos%2Cripple%2Clitecoin&vs_currencies=usd&include_24hr_change=true";
     const [coinData, setCoinData] = useState({});
     
-
     useEffect(() => {
         setInterval(() => {
-            let count = 0;
-            
+            // let count = 0;
             (async () => {
                 try {
                     const response = await fetch(coinAPI);
                     const data = await response.json();
-                    console.log(data);
+                    // console.log(data);
                     setCoinData({ ...data });
                 } catch (e) {
                     console.error(e);
