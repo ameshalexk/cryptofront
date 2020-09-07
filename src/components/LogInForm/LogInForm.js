@@ -4,7 +4,7 @@ import "./LogInForm.css";
 
 function LogInForm(props) {
   return (
-    <div class="loginform">
+    <div className="loginform">
       <h2>Log In</h2>
       <form>
         

@@ -1,0 +1,57 @@
+import React from "react";
+import "./purchaseshow.css";
+import { useState, useEffect } from "react";
+
+
+function PurchaseShow(props) {
+  // console.log(props);
+  const { id, coin, price, shares } = props.purchase;
+
+  const coinAPI =
+        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ceos%2Cripple%2Clitecoin&vs_currencies=usd";
+    const [coinData, setCoinData] = useState({});
+
+  useEffect(() => {
+        (async () => {
+            try {
+                const response = await fetch(coinAPI);
+                const data = await response.json();
+                setCoinData({ ...data });
+            } catch (e) {
+                console.error(e);
+            }
+        })();
+    }, []);
+    
+  return (
+    <div className="">
+      <table className="tablecontainer">
+          
+          <tr>
+            <td>{coin.toUpperCase()}</td>
+            <td>${price}</td>
+            <td>{shares}</td>
+            <td>${shares*price}</td>
+            <td>
+            {Object.entries(coinData).map((coin) => {
+                      console.log(coin);
+                      if (coin[0] === props.purchase.coin) {
+                        if(coin[1].usd > props.purchase.price) {
+                          
+                          return <span style={{ color: 'green'}}> ${(coin[1].usd - props.purchase.price).toFixed(2)} ({((coin[1].usd - props.purchase.price)/props.purchase.price*100).toFixed(2)}%) </span>
+                        } else if (coin[1].usd < props.purchase.price) {
+                          return <span style={{ color: 'red'}}> ${(coin[1].usd - props.purchase.price).toFixed(2)} ({((coin[1].usd - props.purchase.price)/coin[1].usd*100).toFixed(2)}%)</span>
+                        } else {
+                          return coin[1].usd - props.purchase.price
+                        }
+                        
+                      }  
+                    })}
+            </td>
+          </tr>
+        </table>
+    </div>
+  );
+}
+
+export default PurchaseShow;
