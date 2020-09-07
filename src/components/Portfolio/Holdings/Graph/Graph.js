@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { PieChart } from "react-minimal-pie-chart";
+import Legend from "../Legend/Legend";
 import "./Graph.css";
 
 const Graph = (props) => {
@@ -38,26 +39,27 @@ const Graph = (props) => {
                         data={[
                             {
                                 title: "BTC",
-                                value: coinTotals.Bitcoin,
+                                value: coinTotals.bitcoin,
                                 color: "#03295c",
                             },
                             {
                                 title: "ETH",
-                                value: coinTotals.Etherium,
+                                value: coinTotals.ethereum,
                                 color: "#8c3379",
                             },
                             {
                                 title: "XRP",
-                                value: coinTotals.Ripple,
+                                value: coinTotals.ripple,
                                 color: "#eb4e5a",
                             },
                             {
                                 title: "LTC",
-                                value: coinTotals.Litecoin,
+                                value: coinTotals.litecoin,
                                 color: "#ffa600",
                             },
                         ]}
                     />
+                    <Legend />
                 </div>
             )}
         </>

@@ -1,3 +1,25 @@
 .graph_wrap {
     max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.graph_wrap svg {
+    animation: turn-in 0.4s ease-out;
+}
+
+.graph_wrap path {
+    transition: stroke 0.2s ease-out;
+}
+
+@keyframes turn-in {
+    from {
+        opacity: 0;
+        transform: rotate(-30deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
 }
