@@ -6,21 +6,27 @@ const Ticker = () => {
     const coinAPI =
         "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ceos%2Cripple%2Clitecoin&vs_currencies=usd&include_24hr_change=true";
     const [coinData, setCoinData] = useState({});
-
+    
     useEffect(() => {
-        (async () => {
-            try {
-                const response = await fetch(coinAPI);
-                const data = await response.json();
-                setCoinData({ ...data });
-            } catch (e) {
-                console.error(e);
-            }
-        })();
-    }, []);
+        setInterval(() => {
+            // let count = 0;
+            (async () => {
+                try {
+                    const response = await fetch(coinAPI);
+                    const data = await response.json();
+                    // console.log(data);
+                    setCoinData({ ...data });
+                } catch (e) {
+                    console.error(e);
+                }
+            })();
+            // console.log(`Seconds elapsed : ${count+=1}`);
+        }, 1000);
+
+        }, []);
 
     return (
-        <section className="ticker_wrap">
+        <section className="ticker_wrap" >
             {Object.keys(coinData).length > 0 ? (
                 <ul className="ticker_list">
                     {Object.entries(coinData).map((coin, i) => {
