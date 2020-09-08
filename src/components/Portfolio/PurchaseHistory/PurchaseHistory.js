@@ -34,6 +34,7 @@ const PurchaseList = (props) => {
                     <th>Shares</th>
                     <th>Total</th>
                     <th>P&L</th>
+                    <th>EDIT</th>
                 </tr>{" "}
                 <br />
             </div>

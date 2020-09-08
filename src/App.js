@@ -6,9 +6,10 @@ import LogInForm from "./components/LogInForm/LogInForm";
 import LogOut from "./components/LogOut/LogOut";
 import Home from "./components/Home/Home";
 import Portfolio from "./components/Portfolio/Portfolio.js";
-import axios from "axios";
+import Edit from "./components/Edit/Edit.js";
 
 function App() {
+
     return (
         <>
             <Navbar />
@@ -16,6 +17,10 @@ function App() {
                 <LogInForm />
                 <Home />
                 <Portfolio />
+                
+                <Edit/>
+
+                
             </div>
         </>
     );
