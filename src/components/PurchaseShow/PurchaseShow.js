@@ -31,7 +31,7 @@ function PurchaseShow(props) {
             <td>{coin.toUpperCase()}</td>
             <td>${price}</td>
             <td>{shares}</td>
-            <td>${shares*price}</td>
+            <td>${(shares*price).toFixed(2)}</td>
             <td>
             {Object.entries(coinData).map((coin,i) => {
                       // console.log(coin);
