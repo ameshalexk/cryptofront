@@ -1,36 +1,43 @@
 import React, { useState, useEffect } from "react";
+import icons from "./icons/icons";
+import "./Ticker.css";
 
 const Ticker = () => {
     const coinAPI =
         "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ceos%2Cripple%2Clitecoin&vs_currencies=usd&include_24hr_change=true";
     const [coinData, setCoinData] = useState({});
-
+    
     useEffect(() => {
-        (async () => {
-            try {
-                const response = await fetch(coinAPI);
-                const data = await response.json();
-                setCoinData({ ...data });
-            } catch (e) {
-                console.error(e);
-            }
-        })();
-    }, []);
+        setInterval(() => {
+            // let count = 0;
+            (async () => {
+                try {
+                    const response = await fetch(coinAPI);
+                    const data = await response.json();
+                    // console.log(data);
+                    setCoinData({ ...data });
+                } catch (e) {
+                    console.error(e);
+                }
+            })();
+            // console.log(`Seconds elapsed : ${count+=1}`);
+        }, 1000);
+
+        }, []);
 
     return (
-        <section className="ticker_wrap">
+        <section className="ticker_wrap" >
             {Object.keys(coinData).length > 0 ? (
                 <ul className="ticker_list">
                     {Object.entries(coinData).map((coin, i) => {
                         return (
                             <li className="ticker_item" key={i}>
-                                <img
-                                    src="https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579"
-                                    alt="coin-logo"
-                                />
-                                <p className="ticker_item_name">
-                                    <strong>{coin[0]}</strong>
-                                </p>
+                                <div class="ticker_header">
+                                    <img src={icons[coin[0]]} alt="coin-logo" />
+                                    <p className="ticker_item_name">
+                                        <strong>{coin[0]}</strong>
+                                    </p>
+                                </div>
                                 <p className="ticker_item_price">
                                     ${coin[1].usd}
                                 </p>

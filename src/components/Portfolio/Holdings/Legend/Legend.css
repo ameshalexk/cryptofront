@@ -1,0 +1,50 @@
+.legend {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.legend li {
+    margin-right: 0.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.legend p {
+    margin-right: 0.5rem;
+}
+
+.legend_circle {
+    height: 1rem;
+    width: 1rem;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    margin-right: 0.5rem;
+}
+
+#legend_bitcoin {
+    color: #03295c;
+}
+#legend_bitcoin .legend_circle {
+    background: #03295c;
+}
+
+#legend_ethereum {
+    color: #8c3379;
+}
+#legend_ethereum .legend_circle {
+    background: #8c3379;
+}
+
+#legend_ripple {
+    color: #eb4e5a;
+}
+#legend_ripple .legend_circle {
+    background: #eb4e5a;
+}
+
+#legend_litecoin {
+    color: #ffa600;
+}
+#legend_litecoin .legend_circle {
+    background: #ffa600;
+}
