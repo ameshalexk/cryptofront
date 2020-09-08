@@ -21,7 +21,7 @@ const Ticker = () => {
                 }
             })();
             // console.log(`Seconds elapsed : ${count+=1}`);
-        }, 60000);
+        }, 1000);
 
         }, []);
 
