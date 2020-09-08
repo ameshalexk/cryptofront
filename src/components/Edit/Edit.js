@@ -92,7 +92,9 @@ export default function Show(props) {
 				<h1>Nothing found on </h1>
 			)}
 			<h3>
-				{/* <Link to={'/'}>Go Back Home</Link> */}
+				<form >
+				<button type="submit">Delete</button>
+				</form>
 			</h3>
 		</div>
 	);
