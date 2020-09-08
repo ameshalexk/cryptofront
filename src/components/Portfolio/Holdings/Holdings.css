@@ -13,3 +13,14 @@
 .stats_wrap span {
     margin-left: 0.25rem;
 }
+
+.net_label {
+    font-size: 0.8em;
+}
+
+.net_total {
+    font-size: 2em;
+    margin-top: 0;
+    padding-top: 0;
+    color: #02b293;
+}

@@ -22,8 +22,9 @@ const Stats = (props) => {
         <>
             {netWorth > 0 && (
                 <div className="stats_wrap">
-                    <p>Total Investment: ${investmentTotal}</p>
-                    <p>Net Worth: ${netWorth.toFixed(2)}</p>
+                    <p className="net_label">Net Worth:</p>
+                    <p className="net_total">${netWorth.toFixed(2)}</p>
+                    <p>Investment: ${investmentTotal}</p>
                     <p>
                         Profit/Loss:
                         {investmentTotal > netWorth ? (
