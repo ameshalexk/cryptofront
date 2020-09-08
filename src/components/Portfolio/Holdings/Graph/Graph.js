@@ -28,9 +28,6 @@ const Graph = (props) => {
             {Object.keys(coinTotals).length > 0 && (
                 <div className="graph_wrap">
                     <PieChart
-                        animation
-                        animationDuration={500}
-                        animationEasing="ease-out"
                         center={[50, 50]}
                         label={({ dataEntry }) =>
                             `${Math.round(dataEntry.percentage)} %`

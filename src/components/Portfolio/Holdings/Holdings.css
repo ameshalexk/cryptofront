@@ -1,12 +1,13 @@
 .holdings_wrap {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
-    padding: 2em;
+    padding: 2rem;
 }
 
 .holdings_totals {
     text-align: start;
+    margin-right: 2rem;
 }
 
 .stats_wrap span {

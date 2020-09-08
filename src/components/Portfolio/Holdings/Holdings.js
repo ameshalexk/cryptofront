@@ -37,16 +37,23 @@ const Holdings = () => {
     }, []);
 
     useEffect(() => {
-        const summedTotals = {};
-        investment.forEach((item) => {
-            if (summedTotals.hasOwnProperty(item.coin)) {
-                summedTotals[item.coin] +=
-                    item.shares * coinData[item.coin].usd;
-            } else {
-                summedTotals[item.coin] = item.shares * coinData[item.coin].usd;
+        (async () => {
+            try {
+                const summedTotals = {};
+                investment.forEach((item) => {
+                    if (summedTotals.hasOwnProperty(item.coin)) {
+                        summedTotals[item.coin] +=
+                            item.shares * coinData[item.coin].usd;
+                    } else {
+                        summedTotals[item.coin] =
+                            item.shares * coinData[item.coin].usd;
+                    }
+                });
+                setNetWorth(summedTotals);
+            } catch (e) {
+                console.error(e);
             }
-        });
-        setNetWorth(summedTotals);
+        })();
     }, [coinData, investment]);
 
     return (

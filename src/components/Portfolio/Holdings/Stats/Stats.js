@@ -28,11 +28,11 @@ const Stats = (props) => {
                         Profit/Loss:
                         {investmentTotal > netWorth ? (
                             <span className="text_red">
-                                - ${(investmentTotal - netWorth).toFixed(2)}
+                                ▾ ${(investmentTotal - netWorth).toFixed(2)}
                             </span>
                         ) : (
                             <span className="text_green">
-                                + $
+                                ▲ $
                                 {Math.abs(investmentTotal - netWorth).toFixed(
                                     2
                                 )}

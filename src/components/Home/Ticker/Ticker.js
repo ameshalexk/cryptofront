@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import icons from "./icons/icons";
 
 const Ticker = () => {
     const coinAPI =
@@ -24,10 +25,7 @@ const Ticker = () => {
                     {Object.entries(coinData).map((coin, i) => {
                         return (
                             <li className="ticker_item" key={i}>
-                                <img
-                                    src="https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579"
-                                    alt="coin-logo"
-                                />
+                                <img src={icons[coin[0]]} alt="coin-logo" />
                                 <p className="ticker_item_name">
                                     <strong>{coin[0]}</strong>
                                 </p>
