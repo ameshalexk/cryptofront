@@ -40,7 +40,7 @@ const Holdings = () => {
         (async () => {
             try {
                 const summedTotals = {};
-                await investment.forEach((item) => {
+                investment.forEach((item) => {
                     if (summedTotals.hasOwnProperty(item.coin)) {
                         summedTotals[item.coin] +=
                             item.shares * coinData[item.coin].usd;
@@ -60,8 +60,10 @@ const Holdings = () => {
         <section className="holdings_wrap">
             {/* <h2>Holdings</h2> */}
             <div className="holdings_totals">
-                {investment.length > 0 && (
+                {investment.length > 0 ? (
                     <Stats investment={investment} netWorth={netWorth} />
+                ) : (
+                    <p>Loading holdings...</p>
                 )}
             </div>
             <Graph investment={investment} />

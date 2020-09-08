@@ -19,7 +19,7 @@ const Graph = (props) => {
     }, [props.investment]);
 
     const labelStyle = {
-        fontSize: "6px",
+        fontSize: "5px",
         fill: "#fff",
     };
 

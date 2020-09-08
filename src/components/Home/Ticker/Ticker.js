@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import icons from "./icons/icons";
+import "./Ticker.css";
 
 const Ticker = () => {
     const coinAPI =
@@ -25,10 +26,12 @@ const Ticker = () => {
                     {Object.entries(coinData).map((coin, i) => {
                         return (
                             <li className="ticker_item" key={i}>
-                                <img src={icons[coin[0]]} alt="coin-logo" />
-                                <p className="ticker_item_name">
-                                    <strong>{coin[0]}</strong>
-                                </p>
+                                <div class="ticker_header">
+                                    <img src={icons[coin[0]]} alt="coin-logo" />
+                                    <p className="ticker_item_name">
+                                        <strong>{coin[0]}</strong>
+                                    </p>
+                                </div>
                                 <p className="ticker_item_price">
                                     ${coin[1].usd}
                                 </p>
