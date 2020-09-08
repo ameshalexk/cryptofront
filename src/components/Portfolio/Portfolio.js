@@ -2,15 +2,14 @@ import React from "react";
 import PurchaseHistory from "./PurchaseHistory/PurchaseHistory";
 import PurchaseForm from "./PurchaseForm/PurchaseForm";
 import Holdings from "./Holdings/Holdings";
-import "./portfolio.css"
+import "./portfolio.css";
 
-const Portfolio = () => {
+const Portfolio = (props) => {
     return (
         <>
             <PurchaseForm />
             <div className="purchasecontainer">
-            <PurchaseHistory/>
-
+                <PurchaseHistory />
             </div>
             <Holdings />
         </>
