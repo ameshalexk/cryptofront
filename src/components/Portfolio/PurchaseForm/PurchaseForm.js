@@ -4,7 +4,7 @@ import "./PurchaseForm.css";
 const PurchaseForm = (props) => {
     return (
         <>
-            <form>
+            <form className='purchaseform'>
                 <h1 classname="purchase-form">Purchase Form</h1>
                 <select
                     type="number"

@@ -1,3 +1,4 @@
+import './edit.css'
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 let endpoint = "/api/purchases";
@@ -71,10 +72,10 @@ export default function Show(props) {
     };
 
     return (
-        <div className="Page-wrapper">
+        <div className="editcontainer">
             {Object.keys(purchase).length > 0 ? (
                 <div>
-                    <form onSubmit={handleSubmit} className="task-form">
+                    <form onSubmit={handleSubmit} className="editform">
                         <h1> Edit Form </h1>
                         Coin Name:{" "}
                         <input
@@ -103,19 +104,19 @@ export default function Show(props) {
                             onChange={handleChange}
                         />
                         <br />
-                        <button type="submit">Submit Changes</button>
+                        <button className="editform" type="submit">Submit Changes</button>
                     </form>
                 </div>
             ) : (
                 <h1>Nothing found on </h1>
             )}
-            <h3>
-                <form>
+            
+                <form className="editform">
                     <button type="submit" onClick={handleDelete}>
                         Delete
                     </button>
                 </form>
-            </h3>
+            
         </div>
     );
 }

@@ -9,26 +9,26 @@ function PurchaseShow(props) {
 
     console.log(_id);
 
-    const coinAPI =
-        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ceos%2Cripple%2Clitecoin&vs_currencies=usd";
-    const [coinData, setCoinData] = useState({});
+    // const coinAPI =
+    //     "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ceos%2Cripple%2Clitecoin&vs_currencies=usd";
+    // const [coinData, setCoinData] = useState({});
 
-    useEffect(() => {
-        (async () => {
-            try {
-                const response = await fetch(coinAPI);
-                const data = await response.json();
-                setCoinData({ ...data });
-            } catch (e) {
-                console.error(e);
-            }
-        })();
-    }, []);
+    // useEffect(() => {
+    //     (async () => {
+    //         try {
+    //             const response = await fetch(coinAPI);
+    //             const data = await response.json();
+    //             setCoinData({ ...data });
+    //         } catch (e) {
+    //             console.error(e);
+    //         }
+    //     })();
+    // }, []);
     const history = useHistory();
 
-    const handleEdit = () => {
-        console.log(history);
-    };
+    // const handleEdit = () => {
+    //     console.log(history);
+    // };
     return (
         <div className="">
             <table className="tablecontainer">
@@ -38,7 +38,7 @@ function PurchaseShow(props) {
                     <td>{shares}</td>
                     <td>${(shares * price).toFixed(2)}</td>
                     <td>
-                        {Object.entries(coinData).map((coin, i) => {
+                        {Object.entries(props.coindata).map((coin, i) => {
                             // console.log(coin);
                             if (coin[0] === props.purchase.coin) {
                                 if (coin[1].usd > props.purchase.price) {

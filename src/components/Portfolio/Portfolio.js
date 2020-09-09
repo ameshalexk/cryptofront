@@ -83,7 +83,7 @@ const Portfolio = (props) => {
                 handleSubmit={handleSubmit}
             />
             <div className="purchasecontainer">
-                <PurchaseHistory />
+                <PurchaseHistory coinData={coinData} investment={purchases}/>
             </div>
             {Object.keys(coinData).length > 0 && (
                 <Holdings coinData={coinData} investment={purchases} />
