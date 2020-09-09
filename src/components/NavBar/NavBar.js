@@ -33,16 +33,16 @@ function NavBar(props) {
 
     return (
         <nav className="navbar">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
+            <div className="navbar-brand">
+                <a className="navbar-item" href="/">
                     <h1>Crypto</h1>
                 </a>
                 <a
                     role="button"
-                    class="navbar-burger burger"
-                    ariaLabel="menu"
-                    ariaExpanded="false"
-                    dataTarget="navbarBasicExample"
+                    className="navbar-burger burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                    datatarget="navbarBasicExample"
                     href="/"
                 >
                     <span aria-hidden="true"></span>

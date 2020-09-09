@@ -20,6 +20,22 @@ const Home = (props) => {
             }
         })();
     }, []);
+
+    // re-fetch coin api data every minute
+    useEffect(() => {
+        setInterval(() => {
+            (async () => {
+                try {
+                    const response = await axios.get(coinAPI);
+                    const data = await response.data;
+                    setCoinData({ ...data });
+                } catch (e) {
+                    console.error(e);
+                }
+            })();
+        }, 60000);
+    }, []);
+
     return (
         <>
             <Hero />
