@@ -40,6 +40,11 @@ const Graph = (props) => {
                                 color: "#03295c",
                             },
                             {
+                                title: "EOS",
+                                value: coinTotals.eos,
+                                color: "#bc5090",
+                            },
+                            {
                                 title: "ETH",
                                 value: coinTotals.ethereum,
                                 color: "#8c3379",

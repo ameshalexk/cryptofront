@@ -8,6 +8,10 @@ const Legend = () => {
                 <span className="legend_circle"></span>
                 <p>BTC</p>
             </li>
+            <li id="legend_eos">
+                <span className="legend_circle"></span>
+                <p>EOS</p>
+            </li>
             <li id="legend_ethereum">
                 <span className="legend_circle"></span>
                 <p>ETH</p>

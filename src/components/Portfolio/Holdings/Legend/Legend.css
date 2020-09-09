@@ -28,6 +28,14 @@
     background: #03295c;
 }
 
+#legend_eos {
+    color: #bc5090;
+}
+
+#legend_eos .legend_circle {
+    background: #bc5090;
+}
+
 #legend_ethereum {
     color: #8c3379;
 }
