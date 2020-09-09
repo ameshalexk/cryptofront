@@ -10,6 +10,42 @@ const Portfolio = (props) => {
         "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ceos%2Cripple%2Clitecoin&vs_currencies=usd&include_24hr_change=true";
     const [coinData, setCoinData] = useState({});
     const [purchases, setPurchases] = useState([]);
+    const [newPurchase, updateNewPurchase] = useState({
+        coin: "",
+        price: "",
+        shares: "",
+    });
+    const handleChange = (event) => {
+        updateNewPurchase({
+            ...newPurchase,
+            [event.target.name]: event.target.value,
+        });
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const response = await fetch(
+                "http://localhost:3001/api/purchases",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(newPurchase),
+                }
+            );
+            const data = await response.json();
+            setPurchases([...purchases, data]);
+            updateNewPurchase({
+                coin: "",
+                price: "",
+                shares: "",
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
 
     // populate coinData state
     useEffect(() => {
@@ -41,7 +77,11 @@ const Portfolio = (props) => {
 
     return (
         <>
-            <PurchaseForm />
+            <PurchaseForm
+                newPurchase={newPurchase}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+            />
             <div className="purchasecontainer">
                 <PurchaseHistory />
             </div>

@@ -1,35 +1,53 @@
-import React, { useState } from "react";
+import React from "react";
 import "./PurchaseForm.css";
 
-
-
-const PurchaseForm = () => {
-    const [shares, setShares] = useState('12');
-    const [price, setPrice] = useState('26.00');
-
+const PurchaseForm = (props) => {
     return (
-    <>
-     <form>
-    <h1 classname="purchase-form">Purchase Form</h1>
-     <select>
-      <option>Select Coin</option>
-      <option>ETHEREUM</option>
-      <option>BITCOIN</option>
-      <option>EOS</option>
-      <option>LITECOIN</option>
-      <option>RIPPLE</option>
-    </select>   
-    <label className="purchase-form-shares"> Shares:
-        <input type="number" value={shares} onChange={e => setShares(e.target.shares)} />
-      </label>
-    <label> Price Per Share:
-        <input type="number" value={price} onChange={e => setPrice(e.target.price)}  />
-            </label>
-      <button className="button" type="submit"  >
-         SUBMIT 
-      </button>
-     </form>
-  </>
+        <>
+            <form>
+                <h1 classname="purchase-form">Purchase Form</h1>
+                <select
+                    type="number"
+                    name="coin"
+                    value={props.newPurchase.coin}
+                    onChange={props.handleChange}
+                >
+                    <option>Select Coin</option>
+                    <option>bitcoin</option>
+                    <option>eos</option>
+                    <option>ethereum</option>
+                    <option>litecoin</option>
+                    <option>ripple</option>
+                </select>
+                <label className="purchase-form-shares">
+                    {" "}
+                    Shares:
+                    <input
+                        type="text"
+                        name="shares"
+                        value={props.newPurchase.shares}
+                        onChange={props.handleChange}
+                    />
+                </label>
+                <label>
+                    {" "}
+                    Price Per Share:
+                    <input
+                        type="text"
+                        name="price"
+                        value={props.newPurchase.price}
+                        onChange={props.handleChange}
+                    />
+                </label>
+                <button
+                    className="button"
+                    type="submit"
+                    onClick={props.handleSubmit}
+                >
+                    SUBMIT
+                </button>
+            </form>
+        </>
     );
 };
 
