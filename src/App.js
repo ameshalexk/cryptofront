@@ -86,9 +86,6 @@ function App() {
         <>
             <Navbar isLoggedIn={isLoggedIn} logOut={handleLogOut} />
             <div className="App">
-                <LogInForm />
-                <Home />
-                <Portfolio />
                 <Switch>
                     <Route
                         path="/signup"
