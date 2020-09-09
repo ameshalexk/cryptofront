@@ -11,11 +11,7 @@ import axios from "axios";
 
 function App() {
     const history = useHistory();
-    // localStorage.setItem("token", "xyz");
-    const coinAPI =
-        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ceos%2Cripple%2Clitecoin&vs_currencies=usd&include_24hr_change=true";
-    const [coinData, setCoinData] = useState({});
-    const [purchases, setPurchases] = useState([]);
+
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [state, setState] = useState({
         email: "",
@@ -42,7 +38,7 @@ function App() {
             console.log(response);
             localStorage.token = response.data.token;
             setIsLoggedIn(true);
-            history.push("/");
+            history.push("/portfolio");
         } catch (err) {
             console.log(err);
         }
@@ -61,7 +57,7 @@ function App() {
             );
             localStorage.token = response.data.token;
             setIsLoggedIn(true);
-            history.push("/");
+            history.push("/portfolio");
         } catch (error) {
             console.log(error);
         }
@@ -84,35 +80,8 @@ function App() {
             isLoggedIn: false,
         });
         localStorage.clear();
+        history.push("/");
     };
-
-    // populate coinData state
-    useEffect(() => {
-        (async () => {
-            try {
-                const response = await axios.get(coinAPI);
-                const data = await response.data;
-                setCoinData({ ...data });
-            } catch (e) {
-                console.error(e);
-            }
-        })();
-    }, []);
-
-    // populate purchase data
-    useEffect(() => {
-        (async () => {
-            try {
-                const response = await axios.get(
-                    "http://localhost:3001/api/purchases"
-                );
-                const data = await response.data;
-                setPurchases(data);
-            } catch (e) {
-                console.error(e);
-            }
-        })();
-    }, []);
 
     return (
         <>
@@ -155,16 +124,15 @@ function App() {
                         }}
                     />
                     <Route
+                        path="/portfolio"
+                        render={(props) => {
+                            return <Portfolio />;
+                        }}
+                    />
+                    <Route
                         path="/"
-                        render={() => {
-                            return isLoggedIn ? (
-                                <Portfolio
-                                    coinData={coinData}
-                                    purchases={purchases}
-                                />
-                            ) : (
-                                <Home coinData={coinData} />
-                            );
+                        render={(props) => {
+                            return <Home />;
                         }}
                     />
                 </Switch>
