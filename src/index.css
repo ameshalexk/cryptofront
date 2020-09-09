@@ -19,25 +19,6 @@ code {
         monospace;
 }
 
-.ticker_list {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-}
-
-.ticker_item {
-    width: calc(20% - 4rem);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: var(--shadow-full);
-}
-
-.ticker_item_name {
-    text-transform: uppercase;
-}
-
 .text_green {
     color: #00b294;
 }
