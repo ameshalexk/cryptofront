@@ -11,7 +11,12 @@ const Portfolio = (props) => {
             <div className="purchasecontainer">
                 <PurchaseHistory />
             </div>
-            <Holdings />
+            {Object.keys(props.coinData).length > 0 && (
+                <Holdings
+                    coinData={props.coinData}
+                    investment={props.purchases}
+                />
+            )}
         </>
     );
 };
