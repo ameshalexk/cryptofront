@@ -129,6 +129,12 @@ function App() {
                         }}
                     />
                     <Route
+                        path="/:id"
+                        render={(props) => {
+                            return <Edit {...props} />;
+                        }}
+                    />
+                    <Route
                         path="/"
                         render={(props) => {
                             return <Home />;
