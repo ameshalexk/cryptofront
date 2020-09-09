@@ -1,6 +1,7 @@
 import React from "react";
 import "./purchaseshow.css";
 import { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 
 
 function PurchaseShow(props) {
@@ -22,7 +23,11 @@ function PurchaseShow(props) {
             }
         })();
     }, []);
-    
+  	const history = useHistory();
+
+    const handleEdit = () => {
+      console.log(history)
+    }
   return (
     <div className="">
       <table className="tablecontainer">
@@ -47,6 +52,9 @@ function PurchaseShow(props) {
                         
                       }  
                     })}
+            </td>
+            <td>
+              <button onClick={handleEdit}>EDIT</button>
             </td>
           </tr>
         </table>

@@ -6,8 +6,7 @@ import LogOut from "./components/LogOut/LogOut";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import Home from "./components/Home/Home";
 import Portfolio from "./components/Portfolio/Portfolio.js";
-import axios from "axios";
-// import "./App.css";
+import Edit from "./components/Edit/Edit.js";
 
 function App() {
     const history = useHistory();
@@ -82,11 +81,13 @@ function App() {
         localStorage.clear();
         history.push("/");
     };
-
     return (
         <>
             <Navbar isLoggedIn={isLoggedIn} logOut={handleLogOut} />
             <div className="App">
+                <LogInForm />
+                <Home />
+                <Portfolio />
                 <Switch>
                     <Route
                         path="/signup"
