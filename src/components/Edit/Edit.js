@@ -12,7 +12,7 @@ export default function Show(props) {
 	useEffect(() => {
 		(async () => {
 			try {
-				const response = await fetch(`${endpoint}/${props.match.params.id}`);
+				const response = await fetch(`http://localhost:3001/api/purchases/5f55154d8d648f7db113a7a0`);
 				const data = await response.json();
 				await updateFruit(data);
 				console.log(fruit);
@@ -26,7 +26,7 @@ export default function Show(props) {
 		history.push('/');
 
 		try {
-			const response = await fetch(`${endpoint}/${props.match.params.id}`, {
+			const response = await fetch(`http://localhost:3001/api/purchases/5f55154d8d648f7db113a7a0`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json'
