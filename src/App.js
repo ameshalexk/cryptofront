@@ -7,6 +7,7 @@ import SignUpForm from "./components/SignUpForm/SignUpForm";
 import Home from "./components/Home/Home";
 import Portfolio from "./components/Portfolio/Portfolio.js";
 import Edit from "./components/Edit/Edit.js";
+import axios from "axios";
 
 function App() {
     const history = useHistory();
