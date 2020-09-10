@@ -6,17 +6,6 @@ import "./purchasehistory.css";
 const PurchaseList = (props) => {
     const [purchase, setPurchase] = useState([]);
 
-    // useEffect(() => {
-    //     // Need to wrap this in an async function to use await inside:
-    //     async function fetchData() {
-    //         const response = await axios.get(
-    //             "http://localhost:3001/api/purchases"
-    //         );
-    //         setPurchase(response.data);
-    //     }
-    //     fetchData();
-    // }, []);
-
     const showPurchases = props.investment.map((purchase, i) => {
         return (
             <div>

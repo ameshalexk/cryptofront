@@ -1,4 +1,4 @@
-import './edit.css'
+import "./edit.css";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 let endpoint = "/api/purchases";
@@ -11,7 +11,7 @@ export default function Show(props) {
         (async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:3001/api/purchases/${props.match.params.id}`
+                    `https://coinstance-backend.herokuapp.com/${props.match.params.id}`
                 );
                 const data = await response.json();
                 await updatePurchase(data);
@@ -26,7 +26,7 @@ export default function Show(props) {
         event.preventDefault();
         try {
             const response = await fetch(
-                `http://localhost:3001/api/purchases/${props.match.params.id}`,
+                `https://coinstance-backend.herokuapp.com/${props.match.params.id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -56,7 +56,7 @@ export default function Show(props) {
         event.preventDefault();
         try {
             const response = await fetch(
-                `http://localhost:3001/api/purchases/${props.match.params.id}`,
+                `https://coinstance-backend.herokuapp.com/${props.match.params.id}`,
                 {
                     method: "DELETE",
                     headers: {
@@ -75,7 +75,7 @@ export default function Show(props) {
         <div className="editcontainer">
             {Object.keys(purchase).length > 0 ? (
                 <div className="editformcontainer">
-                    <form className="editcontainer" onSubmit={handleSubmit} >
+                    <form className="editcontainer" onSubmit={handleSubmit}>
                         <h1> Edit Form </h1>
                         Coin Name:{" "}
                         <input
@@ -107,61 +107,21 @@ export default function Show(props) {
                             onChange={handleChange}
                         />
                         <br />
-                        <button className="button" type="submit">Submit Changes</button>
-                        <button className="button is-danger"type="submit" onClick={handleDelete}>
-                        Delete
-                    </button>
+                        <button className="button" type="submit">
+                            Submit Changes
+                        </button>
+                        <button
+                            className="button is-danger"
+                            type="submit"
+                            onClick={handleDelete}
+                        >
+                            Delete
+                        </button>
                     </form>
-                    
                 </div>
-                
             ) : (
                 <h1>Nothing found on </h1>
             )}
-            
-                
-            
         </div>
     );
 }
-
-// import React from "react";
-
-// function Edit(props) {
-//   return (
-//     <div className="signupform">
-//       <h2>EDIT</h2>
-//       <form>
-//         <div className="field">
-//           <label className="label">Name</label>
-//           <div className="control">
-//             <input className="input" type="text"  />
-//           </div>
-//         </div>
-
-//         <div className="field">
-//           <label className="label">Price</label>
-//           <div className="control">
-//             <input
-//               className="input"
-//               type="email"
-
-//             />
-//           </div>
-//         </div>
-//         <div className="field">
-//           <label className="label">Shares</label>
-//           <div className="control">
-//             <input
-//               className="input"
-//               type="email"
-
-//             />
-//           </div>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default Edit;
