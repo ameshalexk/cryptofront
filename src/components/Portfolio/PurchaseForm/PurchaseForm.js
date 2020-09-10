@@ -3,10 +3,14 @@ import "./PurchaseForm.css";
 
 const PurchaseForm = (props) => {
     return (
-        <>
+        <div className="purchaseformcontainer">
             <form className='purchaseform'>
-                <h1 classname="purchase-form">Purchase Form</h1>
+                <div className="formh1">
+                <h1 >Purchase Form</h1>
+                </div>
+                <div className="formselect">
                 <select
+                    
                     type="number"
                     name="coin"
                     value={props.newPurchase.coin}
@@ -19,35 +23,38 @@ const PurchaseForm = (props) => {
                     <option>litecoin</option>
                     <option>ripple</option>
                 </select>
-                <label className="purchase-form-shares">
-                    {" "}
-                    Shares:
+                </div>
+                <div className=" forminput1">
+                    <label htmlFor="shares">Shares:</label>
                     <input
+                        className="input"
                         type="text"
                         name="shares"
                         value={props.newPurchase.shares}
                         onChange={props.handleChange}
                     />
-                </label>
-                <label>
-                    {" "}
-                    Price Per Share:
+                    </div>
+                    <div className=" forminput2">
+                    <label htmlFor="price">Price Per Share:</label>
                     <input
+                        className="input "
                         type="text"
                         name="price"
                         value={props.newPurchase.price}
                         onChange={props.handleChange}
                     />
-                </label>
+                    </div>
+                    <div className=" formsubmit">
                 <button
-                    className="button"
+                    className="button " 
                     type="submit"
                     onClick={props.handleSubmit}
                 >
                     SUBMIT
                 </button>
+                </div>
             </form>
-        </>
+        </div>
     );
 };
 

@@ -1,12 +1,13 @@
 nav {
-    background: rgb(153, 134, 28);
+    background: #0371b8;
     padding: 0 2% 0 2%;
     text-align: right;
+    color: #0371b8
 }
 
 nav a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: 600;
     font-size: 20px;
 }
@@ -33,4 +34,13 @@ h1 {
 
 #navtitle {
     text-align: center;
+}
+
+#navbarname {
+    font-size: 50px;
+    color: white
+}
+
+.navcontainer {
+    background: #5aa9c3;
 }

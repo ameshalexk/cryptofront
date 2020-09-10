@@ -37,10 +37,10 @@ const Home = (props) => {
     }, []);
 
     return (
-        <>
+        <div className="home">
             <Hero />
             <Ticker coinData={coinData} />
-        </>
+        </div>
     );
 };
 

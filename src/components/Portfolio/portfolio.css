@@ -1,4 +1,61 @@
 .purchasecontainer {
     margin-top: 50px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
+    align-items: center;
+    place-items: center;
+    /* padding : 550px; */
+}
+
+.portfoliocontainer {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 80px;
+    grid-row-gap: 80px;  
+    padding-left : 100px;
+}
+
+.portfoliocontainerchild1 {grid-area: 1 / 1 / 6 / 3; padding : 10px;}
+.portfoliocontainerchild2 { grid-area: 1 / 3 / 6 / 6; padding : 10px;}
+
+.purchasehistorycontainer {
+    grid-column: 2/2 ;
+   
+}
+
+
+.purchase-form-shares {
+    place-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    color: black;
+}
+
+.purchase-form {
+    color: black;
+    background: black;
+   
+}
+
+h1 {
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+
+    .portfoliocontainer {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr ;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;  
+    }
+    
+    .portfoliocontainerchild1 {grid-area: 1 / 1  }
+    .portfoliocontainerchild2 { grid-area: 2/ 1 ; }
+    
+
 }

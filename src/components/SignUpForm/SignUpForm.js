@@ -4,18 +4,18 @@ import "./SignUpForm.css";
 
 function SignUpForm(props) {
   return (
-    <div class="signupform">
+    <div className="loginform">
       <h2>Sign Up</h2>
       <form>
         
           <label htmlFor="email">Email</label>
-          <input type="text" name="email" onChange={props.handleInput} />
+          <input className="input" type="text" name="email" onChange={props.handleInput} />
         
         
           <label htmlFor="password">Password</label>
-          <input type="text" name="password" onChange={props.handleInput} />
+          <input className="input" type="text" name="password" onChange={props.handleInput} />
         
-        <input value="Submit" type="submit" onClick={props.handleSignUp} />
+        <input className="button" value="Submit" type="submit" onClick={props.handleSignUp} />
       </form>
     </div>
   );

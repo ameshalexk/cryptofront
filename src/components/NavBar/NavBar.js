@@ -32,10 +32,10 @@ function NavBar(props) {
     }
 
     return (
-        <nav className="navbar">
+        <nav className="navbar navcontainer">
             <div className="navbar-brand">
                 <a className="navbar-item" href="/">
-                    <h1>Crypto</h1>
+                    <h1 id="navbarname">CoinStance</h1>
                 </a>
                 <a
                     role="button"

@@ -31,7 +31,7 @@ const Ticker = (props) => {
                                             </span>
                                         ) : (
                                             <span className="text_red">
-                                                ▾{" "}
+                                                ▼{" "}
                                                 {coin[1].usd_24h_change.toFixed(
                                                     2
                                                 )}

@@ -3,23 +3,21 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    /* border: solid gold; */
 }
 .hero-name{
     justify-content: left;
     align-items: flex-start;
-    color: rgb(116, 84, 3);
+    color: white;
     text-align: left;
     padding-left: 2rem;
     font-weight: 500;
-
 }
 
 
 .hero-h1{
     justify-content: left;
     align-items: flex-start;
-    color: rgb(116, 84, 3);
+    color: white;
     text-align: left;
     padding-left: 2rem;
     padding-right: 1rem;
@@ -31,7 +29,7 @@
 .hero-h2{
     justify-content: left;
     align-items: flex-start;
-    color: rgb(116, 84, 3);
+    color: white;
     text-align: left;
     padding-left: 2.2rem;
     padding-right: 2rem;
@@ -47,6 +45,10 @@
     flex-direction: column;
     justify-content: right;
     align-items: flex-end;
+    width: 40%;
+    height: 40%;
+    background: #9790E3;
+
 }
 .hero-image{
     
@@ -55,5 +57,36 @@
     border-radius: 2px;
     margin-top: 1rem;
     padding-right: 4rem;
+    
 
+}
+
+.hero-text {
+    background: #4a4396;
+}
+
+@media (max-width: 900px) {
+
+    .hero-image{
+    
+        display: none;
+    
+    }
+    .hero-text{
+    
+        width: 100%;
+        place-items: center;
+        text-align: center;
+    
+    }
+    .hero-container {
+        width: 100%;
+        place-items: center;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
 }

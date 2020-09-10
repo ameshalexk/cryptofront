@@ -1,5 +1,5 @@
 .tablecontainer {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     margin-left: 50px;
