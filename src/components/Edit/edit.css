@@ -1,6 +1,19 @@
 .editcontainer {
-    width: 500px;
+    /* width: 500px; */
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    /* margin-left: 100px; */
+    /* border: 1px solid red; */
+    padding: 50px;
 }
 /* .editform {
     width: 50px;
 } */
+
+.editformcontainer {
+    width: 500px;
+    height: 80vh;
+}

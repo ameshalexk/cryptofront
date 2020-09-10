@@ -1,8 +1,8 @@
 .ticker_wrap {
     display: flex;
     justify-content: space-around;
-    
-    padding: 50px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     background: #5AA9c3;
 }
 

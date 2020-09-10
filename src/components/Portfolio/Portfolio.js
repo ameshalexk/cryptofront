@@ -77,8 +77,7 @@ const Portfolio = (props) => {
 
     return (
         <div className="portfoliocontainer">
-            <div className="portfoliocontainerchild1">
-            
+            <div className="portfoliocontainerchild1"> 
             {Object.keys(coinData).length > 0 && (
                 <Holdings  coinData={coinData} investment={purchases} />
             )}
@@ -87,12 +86,13 @@ const Portfolio = (props) => {
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
             />
-            
-            </div> 
-            <div className="portfoliocontainerchild2"> 
+            </div>
+            <div className="portfoliocontainerchild2">
             
                 <PurchaseHistory  coinData={coinData} investment={purchases}/>
-                </div>
+
+                
+            </div>
         </div>
     );
 };

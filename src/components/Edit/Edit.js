@@ -74,11 +74,12 @@ export default function Show(props) {
     return (
         <div className="editcontainer">
             {Object.keys(purchase).length > 0 ? (
-                <div>
-                    <form onSubmit={handleSubmit} className="editform">
+                <div className="editformcontainer">
+                    <form className="editcontainer" onSubmit={handleSubmit} >
                         <h1> Edit Form </h1>
                         Coin Name:{" "}
                         <input
+                            className="input"
                             type="text"
                             name="coin"
                             id="coin"
@@ -88,6 +89,7 @@ export default function Show(props) {
                         <br />
                         Price:{" "}
                         <input
+                            className="input"
                             type="text"
                             name="price"
                             id="price"
@@ -97,6 +99,7 @@ export default function Show(props) {
                         <br />
                         Shares:{" "}
                         <input
+                            className="input"
                             type="text"
                             name="shares"
                             id="shares"
@@ -104,18 +107,19 @@ export default function Show(props) {
                             onChange={handleChange}
                         />
                         <br />
-                        <button className="editform" type="submit">Submit Changes</button>
+                        <button className="button" type="submit">Submit Changes</button>
+                        <button className="button is-danger"type="submit" onClick={handleDelete}>
+                        Delete
+                    </button>
                     </form>
+                    
                 </div>
+                
             ) : (
                 <h1>Nothing found on </h1>
             )}
             
-                <form className="editform">
-                    <button type="submit" onClick={handleDelete}>
-                        Delete
-                    </button>
-                </form>
+                
             
         </div>
     );
