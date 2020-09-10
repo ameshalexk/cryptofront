@@ -26,7 +26,7 @@ const Portfolio = (props) => {
         event.preventDefault();
         try {
             const response = await fetch(
-                "http://localhost:3001/api/purchases",
+                "https://coinstance-backend.herokuapp.com/api/purchases",
                 {
                     method: "POST",
                     headers: {
@@ -65,7 +65,7 @@ const Portfolio = (props) => {
         (async () => {
             try {
                 const response = await axios.get(
-                    "http://localhost:3001/api/purchases"
+                    "https://coinstance-backend.herokuapp.com/api/purchases"
                 );
                 const data = await response.data;
                 setPurchases(data);
@@ -77,21 +77,18 @@ const Portfolio = (props) => {
 
     return (
         <div className="portfoliocontainer">
-            <div className="portfoliocontainerchild1"> 
-            {Object.keys(coinData).length > 0 && (
-                <Holdings  coinData={coinData} investment={purchases} />
-            )}
-            <PurchaseForm  
-                newPurchase={newPurchase}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-            />
+            <div className="portfoliocontainerchild1">
+                {Object.keys(coinData).length > 0 && (
+                    <Holdings coinData={coinData} investment={purchases} />
+                )}
+                <PurchaseForm
+                    newPurchase={newPurchase}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                />
             </div>
             <div className="portfoliocontainerchild2">
-            
-                <PurchaseHistory  coinData={coinData} investment={purchases}/>
-
-                
+                <PurchaseHistory coinData={coinData} investment={purchases} />
             </div>
         </div>
     );

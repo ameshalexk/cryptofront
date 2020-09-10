@@ -29,7 +29,7 @@ function App() {
         event.preventDefault();
         try {
             const response = await axios.post(
-                "http://localhost:3001/users/signup",
+                "https://coinstance-backend.herokuapp.com/users/signup",
                 {
                     email: state.email,
                     password: state.password,
@@ -49,7 +49,7 @@ function App() {
         event.preventDefault();
         try {
             const response = await axios.post(
-                "http://localhost:3001/users/login",
+                "https://coinstance-backend.herokuapp.com/users/login",
                 {
                     email: state.email,
                     password: state.password,
