@@ -11,7 +11,7 @@ export default function Show(props) {
         (async () => {
             try {
                 const response = await fetch(
-                    `https://coinstance-backend.herokuapp.com/${props.match.params.id}`
+                    `https://coinstance-backend.herokuapp.com/api/purchases/${props.match.params.id}`
                 );
                 const data = await response.json();
                 await updatePurchase(data);
@@ -26,7 +26,7 @@ export default function Show(props) {
         event.preventDefault();
         try {
             const response = await fetch(
-                `https://coinstance-backend.herokuapp.com/${props.match.params.id}`,
+                `https://coinstance-backend.herokuapp.com/api/purchases/${props.match.params.id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -56,7 +56,7 @@ export default function Show(props) {
         event.preventDefault();
         try {
             const response = await fetch(
-                `https://coinstance-backend.herokuapp.com/${props.match.params.id}`,
+                `https://coinstance-backend.herokuapp.com/api/purchases/${props.match.params.id}`,
                 {
                     method: "DELETE",
                     headers: {
