@@ -12,7 +12,7 @@ const Hero = () => {
                     Manage Your Cryptocurrency Portfolio
                 </h1>
                 <h1 className="hero-h2">
-                    CoinBox is a simple way to monitor market activity, make
+                    CoinStance is a simple way to monitor market activity, make
                     purchases, and review your profits and losses. Login or
                     create account
                 </h1>
