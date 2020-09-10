@@ -5,6 +5,9 @@
         0 41.8px 33.4px rgba(0, 0, 0, 0.028), 0 100px 80px rgba(0, 0, 0, 0.02);
 }
 
+html {
+    background: #5aa9c3;
+}
 
 body {
     margin: 0;
@@ -14,7 +17,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* height: 100%; */
-    
 }
 
 code {
