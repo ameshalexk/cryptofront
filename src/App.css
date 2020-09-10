@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 900px) {
+
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
+
+}

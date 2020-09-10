@@ -64,3 +64,29 @@
 .hero-text {
     background: #4a4396;
 }
+
+@media (max-width: 900px) {
+
+    .hero-image{
+    
+        display: none;
+    
+    }
+    .hero-text{
+    
+        width: 100%;
+        place-items: center;
+        text-align: center;
+    
+    }
+    .hero-container {
+        width: 100%;
+        place-items: center;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
