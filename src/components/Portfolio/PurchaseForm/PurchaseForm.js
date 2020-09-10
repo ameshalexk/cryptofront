@@ -3,7 +3,7 @@ import "./PurchaseForm.css";
 
 const PurchaseForm = (props) => {
     return (
-        <>
+        <div className="purchaseformcontainer">
             <form className='purchaseform'>
                 <h1 classname="purchase-form">Purchase Form</h1>
                 <select
@@ -29,7 +29,7 @@ const PurchaseForm = (props) => {
                         onChange={props.handleChange}
                     />
                 </label>
-                <label>
+                <label className="purchase-form-shares">
                     {" "}
                     Price Per Share:
                     <input
@@ -47,7 +47,7 @@ const PurchaseForm = (props) => {
                     SUBMIT
                 </button>
             </form>
-        </>
+        </div>
     );
 };
 

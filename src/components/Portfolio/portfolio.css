@@ -1,4 +1,51 @@
 .purchasecontainer {
     margin-top: 50px;
     margin-bottom: 50px;
+    align-items: center;
+    place-items: center;
+}
+
+.portfoliocontainer {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+
+.purchasehistorycontainer {
+    grid-column: 2/2 ;
+   
+}
+.purchaseformcontainer {
+    grid-row: 2/ 2;
+    grid-column: 1/1;
+    width: 500px;
+    place-items: center;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    
+}
+
+.purchaseform {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.purchase-form-shares {
+    /* border: 1px solid red; */
+    place-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+}
+
+.purchase-form {
+    color: black;
+    background: black;
+
 }

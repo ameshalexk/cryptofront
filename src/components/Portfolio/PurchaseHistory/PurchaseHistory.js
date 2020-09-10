@@ -26,7 +26,7 @@ const PurchaseList = (props) => {
     });
 
     return (
-        <div>
+        <div className="purchasehistorycontainer">
             <div className="tablecontainer">
                 <tr>
                     <th>Name</th>

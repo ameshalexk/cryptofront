@@ -76,19 +76,24 @@ const Portfolio = (props) => {
     }, []);
 
     return (
-        <>
-            <PurchaseForm
+        <div className="portfoliocontainer">
+            <div className="portfoliocontainerchild1">
+            
+            {Object.keys(coinData).length > 0 && (
+                <Holdings  coinData={coinData} investment={purchases} />
+            )}
+            <PurchaseForm  
                 newPurchase={newPurchase}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
             />
-            <div className="purchasecontainer">
-                <PurchaseHistory coinData={coinData} investment={purchases}/>
-            </div>
-            {Object.keys(coinData).length > 0 && (
-                <Holdings coinData={coinData} investment={purchases} />
-            )}
-        </>
+            
+            </div> 
+            <div className="portfoliocontainerchild2"> 
+            
+                <PurchaseHistory  coinData={coinData} investment={purchases}/>
+                </div>
+        </div>
     );
 };
 

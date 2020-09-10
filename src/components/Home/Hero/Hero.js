@@ -7,7 +7,7 @@ const Hero = () => {
     return (
         <div className="hero-container">
             <div className="hero-text">
-                <h1 className="hero-name">CoinBox</h1>
+                <h1 className="hero-name">Join CoinStance</h1>
                 <h1 className="hero-h1">
                     Manage Your Cryptocurrency Portfolio
                 </h1>
@@ -18,10 +18,10 @@ const Hero = () => {
                 </h1>
             </div>
 
-            <div image-container>
+            <div className="image-container">
                 <img
                     className="hero-image"
-                    src="https://i.ibb.co/2MwbH9d/Bitcoins-hepa-Golden-virtual-currency-coins-background-3-D-Illustration.jpg"
+                    src="https://www.brandbucket.com/sites/default/files/logo_uploads/181964/large_coinstance.png"
                     alt="new"
                 />
             </div>
